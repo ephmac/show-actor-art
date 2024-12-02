@@ -8,9 +8,9 @@
   "styles": ["show-actor-art.css"],
   "packs": [],
   "languages": [],
-  "url": "https://github.com/<your-repository>/show-actor-art",
-  "manifest": "https://raw.githubusercontent.com/<your-repository>/main/module.json",
-  "download": "https://github.com/<your-repository>/archive/refs/heads/main.zip",
+  "url": "https://github.com/ephmac/show-actor-art",
+  "manifest": "https://raw.githubusercontent.com/ephmac/main/module.json",
+  "download": "https://github.com/ephmac/archive/refs/heads/main.zip",
   "minimumCoreVersion": "11",
   "compatibleCoreVersion": "12"
 }
