@@ -1,0 +1,16 @@
+{
+  "id": "show-actor-art",
+  "title": "Show Actor Art",
+  "description": "A FoundryVTT module that adds buttons to show actor and item artwork to all players.",
+  "version": "1.0.0",
+  "author": "Ephaltes & ChatGPT",
+  "scripts": ["show-actor-art.js"],
+  "styles": ["show-actor-art.css"],
+  "packs": [],
+  "languages": [],
+  "url": "https://github.com/<your-repository>/show-actor-art",
+  "manifest": "https://raw.githubusercontent.com/<your-repository>/main/module.json",
+  "download": "https://github.com/<your-repository>/archive/refs/heads/main.zip",
+  "minimumCoreVersion": "11",
+  "compatibleCoreVersion": "12"
+}

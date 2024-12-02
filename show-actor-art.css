@@ -1,0 +1,7 @@
+a.roll-table {
+  max-width: 25px;
+  margin-left: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  color: red; /* Wyróżnienie dla widoczności */
+}
