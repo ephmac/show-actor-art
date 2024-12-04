@@ -3,7 +3,7 @@ a.roll-table {
   margin-left: 5px; /* Odstęp między przyciskami */
   cursor: pointer;
   text-decoration: none;
-  color: white;
+  color: #ffffff;
 }
 
 a.roll-table i {
