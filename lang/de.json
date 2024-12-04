@@ -1,0 +1,18 @@
+{
+  "SHOW_ACTOR_ART.ONLY_YOU_VISIBILITY": "Zeige Kunst - Nur für dich (Sichtbarkeit)",
+  "SHOW_ACTOR_ART.ONLY_YOU_VISIBILITY_HINT": "Wer kann diesen Button sehen.",
+  "SHOW_ACTOR_ART.ONLY_YOU_PLACEMENT": "Zeige Kunst - Nur für dich (Positionierung)",
+  "SHOW_ACTOR_ART.ONLY_YOU_PLACEMENT_HINT": "Wo dieser Button angezeigt wird.",
+  "SHOW_ACTOR_ART.EVERYONE_VISIBILITY": "Zeige Kunst - Alle (Sichtbarkeit)",
+  "SHOW_ACTOR_ART.EVERYONE_VISIBILITY_HINT": "Wer kann diesen Button sehen.",
+  "SHOW_ACTOR_ART.EVERYONE_PLACEMENT": "Zeige Kunst - Alle (Positionierung)",
+  "SHOW_ACTOR_ART.EVERYONE_PLACEMENT_HINT": "Wo dieser Button angezeigt wird.",
+  "SHOW_ACTOR_ART.VISIBILITY_NONE": "Keine",
+  "SHOW_ACTOR_ART.VISIBILITY_GM_ONLY": "Nur Spielleiter",
+  "SHOW_ACTOR_ART.VISIBILITY_GM_AND_PLAYERS": "Spielleiter und Spieler",
+  "SHOW_ACTOR_ART.PLACEMENT_ACTORS": "Schauspieler",
+  "SHOW_ACTOR_ART.PLACEMENT_ITEMS": "Gegenstände",
+  "SHOW_ACTOR_ART.PLACEMENT_ACTORS_AND_ITEMS": "Schauspieler und Gegenstände",
+  "SHOW_ACTOR_ART.TOOLTIP_ONLY_YOU": "Zeige Kunst (Nur für dich)",
+  "SHOW_ACTOR_ART.TOOLTIP_EVERYONE": "Zeige Kunst (Alle)"
+}

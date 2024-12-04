@@ -1,0 +1,18 @@
+{
+  "SHOW_ACTOR_ART.ONLY_YOU_VISIBILITY": "Показать арт - Только вам (Видимость)",
+  "SHOW_ACTOR_ART.ONLY_YOU_VISIBILITY_HINT": "Кто может видеть эту кнопку.",
+  "SHOW_ACTOR_ART.ONLY_YOU_PLACEMENT": "Показать арт - Только вам (Расположение)",
+  "SHOW_ACTOR_ART.ONLY_YOU_PLACEMENT_HINT": "Где появится эта кнопка.",
+  "SHOW_ACTOR_ART.EVERYONE_VISIBILITY": "Показать арт - Всем (Видимость)",
+  "SHOW_ACTOR_ART.EVERYONE_VISIBILITY_HINT": "Кто может видеть эту кнопку.",
+  "SHOW_ACTOR_ART.EVERYONE_PLACEMENT": "Показать арт - Всем (Расположение)",
+  "SHOW_ACTOR_ART.EVERYONE_PLACEMENT_HINT": "Где появится эта кнопка.",
+  "SHOW_ACTOR_ART.VISIBILITY_NONE": "Нет",
+  "SHOW_ACTOR_ART.VISIBILITY_GM_ONLY": "Только GM",
+  "SHOW_ACTOR_ART.VISIBILITY_GM_AND_PLAYERS": "GM и игроки",
+  "SHOW_ACTOR_ART.PLACEMENT_ACTORS": "Актёры",
+  "SHOW_ACTOR_ART.PLACEMENT_ITEMS": "Предметы",
+  "SHOW_ACTOR_ART.PLACEMENT_ACTORS_AND_ITEMS": "Актёры и предметы",
+  "SHOW_ACTOR_ART.TOOLTIP_ONLY_YOU": "Показать арт (Только вам)",
+  "SHOW_ACTOR_ART.TOOLTIP_EVERYONE": "Показать арт (Всем)"
+}

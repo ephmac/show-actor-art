@@ -1,0 +1,18 @@
+{
+  "SHOW_ACTOR_ART.ONLY_YOU_VISIBILITY": "Mostrar arte - Solo tú (Visibilidad)",
+  "SHOW_ACTOR_ART.ONLY_YOU_VISIBILITY_HINT": "Quién puede ver este botón.",
+  "SHOW_ACTOR_ART.ONLY_YOU_PLACEMENT": "Mostrar arte - Solo tú (Ubicación)",
+  "SHOW_ACTOR_ART.ONLY_YOU_PLACEMENT_HINT": "Dónde aparece este botón.",
+  "SHOW_ACTOR_ART.EVERYONE_VISIBILITY": "Mostrar arte - Todos (Visibilidad)",
+  "SHOW_ACTOR_ART.EVERYONE_VISIBILITY_HINT": "Quién puede ver este botón.",
+  "SHOW_ACTOR_ART.EVERYONE_PLACEMENT": "Mostrar arte - Todos (Ubicación)",
+  "SHOW_ACTOR_ART.EVERYONE_PLACEMENT_HINT": "Dónde aparece este botón.",
+  "SHOW_ACTOR_ART.VISIBILITY_NONE": "Ninguno",
+  "SHOW_ACTOR_ART.VISIBILITY_GM_ONLY": "Solo el GM",
+  "SHOW_ACTOR_ART.VISIBILITY_GM_AND_PLAYERS": "GM y jugadores",
+  "SHOW_ACTOR_ART.PLACEMENT_ACTORS": "Actores",
+  "SHOW_ACTOR_ART.PLACEMENT_ITEMS": "Objetos",
+  "SHOW_ACTOR_ART.PLACEMENT_ACTORS_AND_ITEMS": "Actores y objetos",
+  "SHOW_ACTOR_ART.TOOLTIP_ONLY_YOU": "Mostrar arte (Solo tú)",
+  "SHOW_ACTOR_ART.TOOLTIP_EVERYONE": "Mostrar arte (Todos)"
+}
