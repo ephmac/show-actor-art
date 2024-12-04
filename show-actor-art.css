@@ -1,7 +1,11 @@
 a.roll-table {
   max-width: 25px;
-  margin-left: 10px;
+  margin-left: 5px; /* Odstęp między przyciskami */
   cursor: pointer;
   text-decoration: none;
-  color: #ffffff; /* Wyróżnienie dla widoczności */
+  color: white;
+}
+
+a.roll-table i {
+  font-size: 1rem; /* Rozmiar ikony */
 }
