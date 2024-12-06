@@ -1,150 +1,259 @@
 Hooks.once("init", () => {
-    // Ustawienia dla przycisku "Show Art - Only You"
-    game.settings.register("show-actor-art", "onlyYouVisibility", {
-        name: game.i18n.localize("SHOW_ACTOR_ART.ONLY_YOU_VISIBILITY"),
-        hint: game.i18n.localize("SHOW_ACTOR_ART.ONLY_YOU_VISIBILITY_HINT"),
+    // Rejestracja ustawień modułu
+    game.settings.register("show-actor-art", "buttonSettings", {
+        name: "Button Configuration",
+        hint: "Configure visibility and placement of buttons.",
         scope: "world",
-        config: true,
-        type: String,
-        choices: {
-            "none": game.i18n.localize("SHOW_ACTOR_ART.VISIBILITY_NONE"),
-            "gm-only": game.i18n.localize("SHOW_ACTOR_ART.VISIBILITY_GM_ONLY"),
-            "gm-and-players": game.i18n.localize("SHOW_ACTOR_ART.VISIBILITY_GM_AND_PLAYERS")
-        },
-        default: "gm-and-players"
+        config: false,
+        type: Object,
+        default: {
+            onlyYou: {
+                placement: { actors: true, items: true },
+                visibility: { gm: true, players: true }
+            },
+            everyone: {
+                placement: { actors: true, items: true },
+                visibility: { gm: true, players: true }
+            },
+            ownership: {
+                placement: { actors: true, items: true, journal: true }
+            }
+        }
     });
 
-    game.settings.register("show-actor-art", "onlyYouPlacement", {
-        name: game.i18n.localize("SHOW_ACTOR_ART.ONLY_YOU_PLACEMENT"),
-        hint: game.i18n.localize("SHOW_ACTOR_ART.ONLY_YOU_PLACEMENT_HINT"),
-        scope: "world",
-        config: true,
-        type: String,
-        choices: {
-            "actors": game.i18n.localize("SHOW_ACTOR_ART.PLACEMENT_ACTORS"),
-            "items": game.i18n.localize("SHOW_ACTOR_ART.PLACEMENT_ITEMS"),
-            "actors-and-items": game.i18n.localize("SHOW_ACTOR_ART.PLACEMENT_ACTORS_AND_ITEMS")
-        },
-        default: "actors-and-items"
+    // Rejestracja menu ustawień
+    game.settings.registerMenu("show-actor-art", "buttonSettingsMenu", {
+        name: game.i18n.localize("SHOW_ACTOR_ART.BUTTON_SETTINGS_MENU"),
+        label: game.i18n.localize("SHOW_ACTOR_ART.BUTTON_SETTINGS_MENU_LABEL"),
+        hint: game.i18n.localize("SHOW_ACTOR_ART.BUTTON_SETTINGS_MENU_HINT"),
+        icon: "fas fa-cogs",
+        type: ButtonSettingsForm,
+        restricted: true
     });
 
-    // Ustawienia dla przycisku "Show Art - Everyone"
-    game.settings.register("show-actor-art", "everyoneVisibility", {
-        name: game.i18n.localize("SHOW_ACTOR_ART.EVERYONE_VISIBILITY"),
-        hint: game.i18n.localize("SHOW_ACTOR_ART.EVERYONE_VISIBILITY_HINT"),
-        scope: "world",
-        config: true,
-        type: String,
-        choices: {
-            "none": game.i18n.localize("SHOW_ACTOR_ART.VISIBILITY_NONE"),
-            "gm-only": game.i18n.localize("SHOW_ACTOR_ART.VISIBILITY_GM_ONLY"),
-            "gm-and-players": game.i18n.localize("SHOW_ACTOR_ART.VISIBILITY_GM_AND_PLAYERS")
-        },
-        default: "gm-and-players"
-    });
+});
 
-    game.settings.register("show-actor-art", "everyonePlacement", {
-        name: game.i18n.localize("SHOW_ACTOR_ART.EVERYONE_PLACEMENT"),
-        hint: game.i18n.localize("SHOW_ACTOR_ART.EVERYONE_PLACEMENT_HINT"),
-        scope: "world",
-        config: true,
-        type: String,
-        choices: {
-            "actors": game.i18n.localize("SHOW_ACTOR_ART.PLACEMENT_ACTORS"),
-            "items": game.i18n.localize("SHOW_ACTOR_ART.PLACEMENT_ITEMS"),
-            "actors-and-items": game.i18n.localize("SHOW_ACTOR_ART.PLACEMENT_ACTORS_AND_ITEMS")
-        },
-        default: "actors-and-items"
-    });
+Hooks.once("ready", () => {
+    // Odświeżanie sidebaru przy zmianach w ustawieniach
+    watchSettingsForChanges();
 });
 
 Hooks.on("renderActorDirectory", (app, html, data) => {
     const actors = html.find(".directory-item.document");
     actors.each((index, actorElement) => {
-        enrichSidebar(actorElement);
+        enrichSidebar(actorElement, "actor");
     });
 });
 
 Hooks.on("renderItemDirectory", (app, html, data) => {
     const items = html.find(".directory-item.document");
     items.each((index, itemElement) => {
-        enrichSidebar(itemElement);
+        enrichSidebar(itemElement, "item");
     });
 });
 
-// Funkcja do dodawania przycisków na podstawie ustawień
-function enrichSidebar(element) {
-    // Sprawdzenie ustawień dla przycisków
-    const onlyYouVisibility = game.settings.get("show-actor-art", "onlyYouVisibility");
-    const onlyYouPlacement = game.settings.get("show-actor-art", "onlyYouPlacement");
-    const everyoneVisibility = game.settings.get("show-actor-art", "everyoneVisibility");
-    const everyonePlacement = game.settings.get("show-actor-art", "everyonePlacement");
+Hooks.on("renderJournalDirectory", (app, html, data) => {
+    const journals = html.find(".directory-item.document");
+    journals.each((index, journalElement) => {
+        enrichSidebar(journalElement, "journal");
+    });
+});
 
-    // Tworzenie przycisku "Show Art - Only You" (jeśli włączony i pasuje do typu)
-    if (shouldDisplayButton(onlyYouVisibility) && matchesPlacement(onlyYouPlacement, element)) {
-        let localButton = createButton(
-            "fa-eye", 
-            "SHOW_ACTOR_ART.TOOLTIP_ONLY_YOU", 
-            () => {
-                const entityId = element.dataset.documentId;
-                const entity = game.actors.get(entityId) || game.items.get(entityId);
-                if (!entity || !entity.img) {
-                    ui.notifications.warn("This entity has no artwork set.");
-                    return;
-                }
-                new ImagePopout(entity.img, { title: entity.name }).render(true);
-            }
-        );
-        element.appendChild(localButton);
+// Klasa dla formularza dynamicznego ustawień
+class ButtonSettingsForm extends FormApplication {
+    static get defaultOptions() {
+        return mergeObject(super.defaultOptions, {
+            id: "button-settings-form",
+            title: "Button Configuration",
+            template: "modules/show-actor-art/templates/settings-form.html",
+            width: 600,
+            closeOnSubmit: true
+        });
     }
 
-    // Tworzenie przycisku "Show Art - Everyone" (jeśli włączony i pasuje do typu)
-    if (shouldDisplayButton(everyoneVisibility) && matchesPlacement(everyonePlacement, element)) {
-        let globalButton = createButton(
-            "fa-share-alt", 
-            "SHOW_ACTOR_ART.TOOLTIP_EVERYONE", 
-            () => {
-                const entityId = element.dataset.documentId;
-                const entity = game.actors.get(entityId) || game.items.get(entityId);
-                if (!entity || !entity.img) {
-                    ui.notifications.warn("This entity has no artwork set.");
-                    return;
-                }
-                const popout = new ImagePopout(entity.img, { title: entity.name });
-                popout.render(true);
-                popout.shareImage();
-            }
-        );
-        element.appendChild(globalButton);
+    getData() {
+        // Pobierz bieżące ustawienia
+        return {
+            settings: game.settings.get("show-actor-art", "buttonSettings")
+        };
+    }
+
+    async _updateObject(event, formData) {
+        // Zapisz zmienione ustawienia
+        const updatedSettings = expandObject(formData);
+        await game.settings.set("show-actor-art", "buttonSettings", updatedSettings);
+        ui.notifications.info("Button settings updated.");
+        refreshSidebarButtons();
     }
 }
 
-// Funkcja pomocnicza: tworzenie przycisku
+// Funkcja do odświeżania sidebaru
+function refreshSidebarButtons() {
+    const actorDirectory = ui.actors;
+    if (actorDirectory) actorDirectory.render(true);
+
+    const itemDirectory = ui.items;
+    if (itemDirectory) itemDirectory.render(true);
+
+    const journalDirectory = ui.journal;
+    if (journalDirectory) journalDirectory.render(true);
+}
+
+// Funkcja dodająca przyciski w zależności od ustawień
+function enrichSidebar(element, type) {
+    const settings = game.settings.get("show-actor-art", "buttonSettings");
+
+    // Przyciski "Only You"
+    if (type === "actor" && settings.onlyYou.placement.actors && shouldDisplayButton(settings.onlyYou.visibility)) {
+        addButton(element, "onlyYou");
+    }
+    if (type === "item" && settings.onlyYou.placement.items && shouldDisplayButton(settings.onlyYou.visibility)) {
+        addButton(element, "onlyYou");
+    }
+
+    // Przyciski "Everyone"
+    if (type === "actor" && settings.everyone.placement.actors && shouldDisplayButton(settings.everyone.visibility)) {
+        addButton(element, "everyone");
+    }
+    if (type === "item" && settings.everyone.placement.items && shouldDisplayButton(settings.everyone.visibility)) {
+        addButton(element, "everyone");
+    }
+
+    // Przyciski "Ownership"
+    if (type === "actor" && settings.ownership.placement.actors) {
+        addButton(element, "ownership");
+    }
+    if (type === "item" && settings.ownership.placement.items) {
+        addButton(element, "ownership");
+    }
+    if (type === "journal" && settings.ownership.placement.journal) {
+        addButton(element, "ownership");
+    }
+}
+
+// Funkcja tworząca przyciski z działaniami
+function addButton(element, buttonType) {
+    let buttonLabel = "";
+    let buttonClass = "";
+
+    // Ustawienia etykiet i ikon dla przycisków
+    if (buttonType === "onlyYou") {
+        buttonLabel = "SHOW_ACTOR_ART.TOOLTIP_ONLY_YOU";
+        buttonClass = "fa-eye";
+    } else if (buttonType === "everyone") {
+        buttonLabel = "SHOW_ACTOR_ART.TOOLTIP_EVERYONE";
+        buttonClass = "fa-share-alt";
+    } else if (buttonType === "ownership") {
+    buttonClass = "fa-lock"; // Ikona przycisku Ownership
+
+    // Pobierz element i ustaw dynamiczną podpowiedź
+    const entityId = element.dataset.documentId;
+    const entity = game.actors.get(entityId) || game.items.get(entityId) || game.journal.get(entityId);
+
+    if (entity) {
+        const ownershipLevel = entity.ownership?.default || 0;
+        const ownershipLabels = {
+            0: game.i18n.localize("SHOW_ACTOR_ART.OWNERSHIP_NONE"),
+            1: game.i18n.localize("SHOW_ACTOR_ART.OWNERSHIP_LIMITED"),
+            2: game.i18n.localize("SHOW_ACTOR_ART.OWNERSHIP_OBSERVER"),
+            3: game.i18n.localize("SHOW_ACTOR_ART.OWNERSHIP_OWNER")
+        };
+
+        buttonLabel = ownershipLabels[ownershipLevel] || "Unknown"; // Dynamiczny tekst
+    }
+}
+
+    // Tworzenie przycisku
+    const button = createButton(buttonClass, buttonLabel, async () => {
+        const entityId = element.dataset.documentId;
+        const entity = game.actors.get(entityId) || game.items.get(entityId) || game.journal.get(entityId);
+
+        if (!entity) {
+            console.error("Entity not found for button action.");
+            return;
+        }
+
+        // Obsługa działania dla każdego typu przycisku
+        if (buttonType === "onlyYou") {
+            if (!entity.img) {
+                console.warn("This entity has no artwork set.");
+                return;
+            }
+            // Wyświetl grafikę tylko dla siebie
+            new ImagePopout(entity.img, { title: entity.name }).render(true);
+        } else if (buttonType === "everyone") {
+            if (!entity.img) {
+                console.warn("This entity has no artwork set.");
+                return;
+            }
+            // Udostępnij grafikę wszystkim
+            const popout = new ImagePopout(entity.img, { title: entity.name });
+            popout.render(true);
+            popout.shareImage();
+        } else if (buttonType === "ownership") {
+            // Przełącz poziom uprawnień cyklicznie
+            const ownershipLevels = [0, 1, 2, 3]; // None, Limited, Observer, Owner
+            const currentOwnership = entity.ownership?.default || 0;
+            const nextOwnership = (currentOwnership + 1) % 4;
+
+            try {
+                await entity.update({ ownership: { default: nextOwnership } });
+                refreshSidebarButtons(); // Odśwież sidebar, aby zaktualizować kolor przycisku
+            } catch (err) {
+                console.error("Failed to update ownership:", err);
+            }
+        }
+    });
+
+    // Ustaw kolor przycisku "Ownership" w zależności od poziomu uprawnień
+    if (buttonType === "ownership") {
+        const entityId = element.dataset.documentId;
+        const entity = game.actors.get(entityId) || game.items.get(entityId) || game.journal.get(entityId);
+
+        if (entity) {
+            const ownershipLevel = entity.ownership?.default || 0;
+            const ownershipColors = {
+                0: "#cc6666", // None (Czerwony)
+                1: "#ff8000", // Limited (Pomarańczowy)
+                2: "#ffff00", // Observer (Żółty)
+                3: "#66cc66"  // Owner (Zielony)
+            };
+
+            button.style.color = ownershipColors[ownershipLevel] || "#cccccc";
+        }
+    }
+
+    // Dodaj przycisk do elementu
+    element.appendChild(button);
+}
+
+// Funkcja pomocnicza do tworzenia przycisku
 function createButton(iconClass, tooltipKey, onClick) {
     let button = document.createElement("a");
-    button.classList.add("roll-table"); // Klasa CSS
-    button.setAttribute("title", game.i18n.localize(tooltipKey)); // Tłumaczenie podpowiedzi
+    button.classList.add("roll-table");
+    button.setAttribute("title", game.i18n.localize(tooltipKey));
     let icon = document.createElement("i");
-    icon.classList.add("fas", iconClass); // Dodanie klasy ikony
+    icon.classList.add("fas", iconClass);
     button.appendChild(icon);
-    button.addEventListener("click", onClick); // Obsługa kliknięcia
+    button.addEventListener("click", onClick);
     return button;
 }
 
-// Funkcja pomocnicza: sprawdzanie widoczności przycisków
-function shouldDisplayButton(setting) {
-    if (setting === "none") return false;
-    if (setting === "gm-only" && !game.user.isGM) return false;
-    return true;
+// Funkcja pomocnicza do tworzenia przycisku
+function createButton(iconClass, tooltipKey, onClick) {
+    let button = document.createElement("a");
+    button.classList.add("roll-table");
+    button.setAttribute("title", game.i18n.localize(tooltipKey));
+    let icon = document.createElement("i");
+    icon.classList.add("fas", iconClass);
+    button.appendChild(icon);
+    button.addEventListener("click", onClick);
+    return button;
 }
 
-// Funkcja pomocnicza: sprawdzanie, czy przycisk pasuje do typu elementu
-function matchesPlacement(setting, element) {
-    const isActor = element.dataset.documentId && game.actors.get(element.dataset.documentId);
-    const isItem = element.dataset.documentId && game.items.get(element.dataset.documentId);
-
-    if (setting === "actors") return isActor;
-    if (setting === "items") return isItem;
-    if (setting === "actors-and-items") return isActor || isItem;
+// Funkcja sprawdzająca widoczność przycisku
+function shouldDisplayButton(visibilitySettings) {
+    if (visibilitySettings.gm && game.user.isGM) return true;
+    if (visibilitySettings.players && !game.user.isGM) return true;
     return false;
 }
