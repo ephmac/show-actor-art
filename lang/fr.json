@@ -1,18 +1,30 @@
 {
-  "SHOW_ACTOR_ART.ONLY_YOU_VISIBILITY": "Afficher l'art - Seulement vous (Visibilité)",
-  "SHOW_ACTOR_ART.ONLY_YOU_VISIBILITY_HINT": "Qui peut voir ce bouton.",
-  "SHOW_ACTOR_ART.ONLY_YOU_PLACEMENT": "Afficher l'art - Seulement vous (Emplacement)",
-  "SHOW_ACTOR_ART.ONLY_YOU_PLACEMENT_HINT": "Où ce bouton apparaît.",
-  "SHOW_ACTOR_ART.EVERYONE_VISIBILITY": "Afficher l'art - Tout le monde (Visibilité)",
-  "SHOW_ACTOR_ART.EVERYONE_VISIBILITY_HINT": "Qui peut voir ce bouton.",
-  "SHOW_ACTOR_ART.EVERYONE_PLACEMENT": "Afficher l'art - Tout le monde (Emplacement)",
-  "SHOW_ACTOR_ART.EVERYONE_PLACEMENT_HINT": "Où ce bouton apparaît.",
-  "SHOW_ACTOR_ART.VISIBILITY_NONE": "Aucun",
-  "SHOW_ACTOR_ART.VISIBILITY_GM_ONLY": "Seulement le MJ",
-  "SHOW_ACTOR_ART.VISIBILITY_GM_AND_PLAYERS": "MJ et joueurs",
-  "SHOW_ACTOR_ART.PLACEMENT_ACTORS": "Acteurs",
-  "SHOW_ACTOR_ART.PLACEMENT_ITEMS": "Objets",
-  "SHOW_ACTOR_ART.PLACEMENT_ACTORS_AND_ITEMS": "Acteurs et objets",
-  "SHOW_ACTOR_ART.TOOLTIP_ONLY_YOU": "Afficher l'art (Seulement vous)",
-  "SHOW_ACTOR_ART.TOOLTIP_EVERYONE": "Afficher l'art (Tout le monde)"
+  "SHOW_ACTOR_ART": {
+    "BUTTON_SETTINGS_MENU": "Menu des paramètres des boutons",
+    "BUTTON_SETTINGS_MENU_LABEL": "Configuration des boutons",
+    "BUTTON_SETTINGS_MENU_HINT": "Configurer la visibilité et l'emplacement des boutons.",
+    "TOOLTIP_ONLY_YOU": "Art (Vous)",
+    "TOOLTIP_EVERYONE": "Art (Tout le monde)",
+    "OWNERSHIP_NONE": "Aucune autorisation",
+    "OWNERSHIP_LIMITED": "Limité",
+    "OWNERSHIP_OBSERVER": "Observateur",
+    "OWNERSHIP_OWNER": "Propriétaire",
+    "FORM": {
+      "TITLE": "Configuration des boutons",
+      "HEADERS": {
+        "BUTTON": "Bouton",
+        "PLACEMENT_ACTORS": "Acteurs",
+        "PLACEMENT_ITEMS": "Objets",
+        "PLACEMENT_JOURNAL": "Journaux",
+        "VISIBILITY_GM": "Visibilité MJ",
+        "VISIBILITY_PLAYERS": "Visibilité des joueurs"
+      },
+      "ROWS": {
+        "ONLY_YOU": "Art (Vous)",
+        "EVERYONE": "Art (Tout le monde)",
+        "OWNERSHIP": "Permissions"
+      },
+      "SAVE_BUTTON": "Sauvegarder"
+    }
+  }
 }
