@@ -1,11 +1,56 @@
+/* Ogólne style dla przycisków */
 a.roll-table {
-  max-width: 25px;
-  margin-left: 5px; /* Odstęp między przyciskami */
+  width: 24px; /* Rozmiar przycisków */
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Zaokrąglone krawędzie dla przycisków */
+  color: #ffffff; /* Kolor ikony */
+  text-decoration: none; /* Usunięcie podkreślenia */
+  margin-left: 1px; /* Minimalny odstęp między przyciskami */
   cursor: pointer;
-  text-decoration: none;
-  color: #ffffff;
+  border: 1px solid transparent; /* Ramka dla hover */
+  transition: border-color 0.2s, color 0.2s, transform 0.2s; /* Płynne przejścia */
 }
 
+/* Ikona w przycisku */
 a.roll-table i {
-  font-size: 1rem; /* Rozmiar ikony */
+  font-size: 0.8rem; /* Zmniejszony rozmiar ikony */
+}
+
+/* Efekt hover dla wszystkich przycisków */
+a.roll-table:hover {
+  border-color: #ffffff; /* Pojawiająca się ramka */
+  color: #ffcc00; /* Zmiana koloru ikony */
+  transform: scale(1.1); /* Subtelne powiększenie */
+}
+
+/* Specyficzne klasy dla przycisków */
+
+/* Przycisk "Show Art - Only You" */
+a.roll-table.only-you {
+  /* Możesz dodać unikalny kolor, jeśli potrzeba */
+}
+
+/* Przycisk "Show Art - Everyone" */
+a.roll-table.everyone {
+  /* Możesz dodać unikalny kolor, jeśli potrzeba */
+}
+
+a.roll-table.ownership-button {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Kształt kółka */
+  color: #ffffff; /* Domyślny kolor (na wszelki wypadek) */
+  margin-left: 1px;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s; /* Subtelne przejścia */
+}
+
+a.roll-table.ownership-button:hover {
+  transform: scale(1.1); /* Powiększenie na hover */
 }
