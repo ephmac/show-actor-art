@@ -1,18 +1,30 @@
 {
-  "SHOW_ACTOR_ART.ONLY_YOU_VISIBILITY": "Mostrar arte - Apenas você (Visibilidade)",
-  "SHOW_ACTOR_ART.ONLY_YOU_VISIBILITY_HINT": "Quem pode ver este botão.",
-  "SHOW_ACTOR_ART.ONLY_YOU_PLACEMENT": "Mostrar arte - Apenas você (Localização)",
-  "SHOW_ACTOR_ART.ONLY_YOU_PLACEMENT_HINT": "Onde este botão aparece.",
-  "SHOW_ACTOR_ART.EVERYONE_VISIBILITY": "Mostrar arte - Todos (Visibilidade)",
-  "SHOW_ACTOR_ART.EVERYONE_VISIBILITY_HINT": "Quem pode ver este botão.",
-  "SHOW_ACTOR_ART.EVERYONE_PLACEMENT": "Mostrar arte - Todos (Localização)",
-  "SHOW_ACTOR_ART.EVERYONE_PLACEMENT_HINT": "Onde este botão aparece.",
-  "SHOW_ACTOR_ART.VISIBILITY_NONE": "Nenhum",
-  "SHOW_ACTOR_ART.VISIBILITY_GM_ONLY": "Apenas GM",
-  "SHOW_ACTOR_ART.VISIBILITY_GM_AND_PLAYERS": "GM e jogadores",
-  "SHOW_ACTOR_ART.PLACEMENT_ACTORS": "Atores",
-  "SHOW_ACTOR_ART.PLACEMENT_ITEMS": "Itens",
-  "SHOW_ACTOR_ART.PLACEMENT_ACTORS_AND_ITEMS": "Atores e itens",
-  "SHOW_ACTOR_ART.TOOLTIP_ONLY_YOU": "Mostrar arte (Apenas você)",
-  "SHOW_ACTOR_ART.TOOLTIP_EVERYONE": "Mostrar arte (Todos)"
+  "SHOW_ACTOR_ART": {
+    "BUTTON_SETTINGS_MENU": "Menu de Configurações de Botões",
+    "BUTTON_SETTINGS_MENU_LABEL": "Configuração de Botões",
+    "BUTTON_SETTINGS_MENU_HINT": "Configurar a visibilidade e posicionamento dos botões.",
+    "TOOLTIP_ONLY_YOU": "Arte (Você)",
+    "TOOLTIP_EVERYONE": "Arte (Todos)",
+    "OWNERSHIP_NONE": "Sem Permissões",
+    "OWNERSHIP_LIMITED": "Limitado",
+    "OWNERSHIP_OBSERVER": "Observador",
+    "OWNERSHIP_OWNER": "Proprietário",
+    "FORM": {
+      "TITLE": "Configuração de Botões",
+      "HEADERS": {
+        "BUTTON": "Botão",
+        "PLACEMENT_ACTORS": "Atores",
+        "PLACEMENT_ITEMS": "Itens",
+        "PLACEMENT_JOURNAL": "Jornais",
+        "VISIBILITY_GM": "Visibilidade do GM",
+        "VISIBILITY_PLAYERS": "Visibilidade dos Jogadores"
+      },
+      "ROWS": {
+        "ONLY_YOU": "Arte (Você)",
+        "EVERYONE": "Arte (Todos)",
+        "OWNERSHIP": "Permissões"
+      },
+      "SAVE_BUTTON": "Salvar"
+    }
+  }
 }
