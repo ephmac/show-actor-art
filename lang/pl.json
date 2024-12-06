@@ -1,18 +1,30 @@
 {
-  "SHOW_ACTOR_ART.ONLY_YOU_VISIBILITY": "Pokaż grafikę - Tylko Ty (Widoczność)",
-  "SHOW_ACTOR_ART.ONLY_YOU_VISIBILITY_HINT": "Kto może zobaczyć ten przycisk.",
-  "SHOW_ACTOR_ART.ONLY_YOU_PLACEMENT": "Pokaż grafikę - Tylko Ty (Lokalizacja)",
-  "SHOW_ACTOR_ART.ONLY_YOU_PLACEMENT_HINT": "Gdzie ten przycisk się pojawia.",
-  "SHOW_ACTOR_ART.EVERYONE_VISIBILITY": "Pokaż grafikę - Wszyscy (Widoczność)",
-  "SHOW_ACTOR_ART.EVERYONE_VISIBILITY_HINT": "Kto może zobaczyć ten przycisk.",
-  "SHOW_ACTOR_ART.EVERYONE_PLACEMENT": "Pokaż grafikę - Wszyscy (Lokalizacja)",
-  "SHOW_ACTOR_ART.EVERYONE_PLACEMENT_HINT": "Gdzie ten przycisk się pojawia.",
-  "SHOW_ACTOR_ART.VISIBILITY_NONE": "Brak",
-  "SHOW_ACTOR_ART.VISIBILITY_GM_ONLY": "Tylko MG",
-  "SHOW_ACTOR_ART.VISIBILITY_GM_AND_PLAYERS": "MG i gracze",
-  "SHOW_ACTOR_ART.PLACEMENT_ACTORS": "Aktorzy",
-  "SHOW_ACTOR_ART.PLACEMENT_ITEMS": "Przedmioty",
-  "SHOW_ACTOR_ART.PLACEMENT_ACTORS_AND_ITEMS": "Aktorzy i przedmioty",
-  "SHOW_ACTOR_ART.TOOLTIP_ONLY_YOU": "Pokaż grafikę (Tylko Ty)",
-  "SHOW_ACTOR_ART.TOOLTIP_EVERYONE": "Pokaż grafikę (Wszyscy)"
+  "SHOW_ACTOR_ART": {
+    "BUTTON_SETTINGS_MENU": "Menu ustawień przycisków",
+    "BUTTON_SETTINGS_MENU_LABEL": "Konfiguracja przycisków",
+    "BUTTON_SETTINGS_MENU_HINT": "Skonfiguruj widoczność i rozmieszczenie przycisków.",
+    "TOOLTIP_ONLY_YOU": "Grafika (Ty)",
+    "TOOLTIP_EVERYONE": "Grafika (Wszyscy)",
+    "OWNERSHIP_NONE": "Brak uprawnień",
+    "OWNERSHIP_LIMITED": "Ograniczone",
+    "OWNERSHIP_OBSERVER": "Obserwator",
+    "OWNERSHIP_OWNER": "Właściciel",
+    "FORM": {
+      "TITLE": "Konfiguracja przycisków",
+      "HEADERS": {
+        "BUTTON": "Przycisk",
+        "PLACEMENT_ACTORS": "Aktorzy",
+        "PLACEMENT_ITEMS": "Przedmioty",
+        "PLACEMENT_JOURNAL": "Dzienniki",
+        "VISIBILITY_GM": "Widoczność GM",
+        "VISIBILITY_PLAYERS": "Widoczność graczy"
+      },
+      "ROWS": {
+        "ONLY_YOU": "Grafika (Ty)",
+        "EVERYONE": "Grafika (Wszyscy)",
+        "OWNERSHIP": "Uprawnienia"
+      },
+      "SAVE_BUTTON": "Zapisz"
+    }
+  }
 }
