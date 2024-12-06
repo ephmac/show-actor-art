@@ -1,18 +1,30 @@
 {
-  "SHOW_ACTOR_ART.ONLY_YOU_VISIBILITY": "アートを表示 - あなただけ (表示範囲)",
-  "SHOW_ACTOR_ART.ONLY_YOU_VISIBILITY_HINT": "このボタンを誰が見ることができますか。",
-  "SHOW_ACTOR_ART.ONLY_YOU_PLACEMENT": "アートを表示 - あなただけ (配置場所)",
-  "SHOW_ACTOR_ART.ONLY_YOU_PLACEMENT_HINT": "このボタンが表示される場所。",
-  "SHOW_ACTOR_ART.EVERYONE_VISIBILITY": "アートを表示 - 全員 (表示範囲)",
-  "SHOW_ACTOR_ART.EVERYONE_VISIBILITY_HINT": "このボタンを誰が見ることができますか。",
-  "SHOW_ACTOR_ART.EVERYONE_PLACEMENT": "アートを表示 - 全員 (配置場所)",
-  "SHOW_ACTOR_ART.EVERYONE_PLACEMENT_HINT": "このボタンが表示される場所。",
-  "SHOW_ACTOR_ART.VISIBILITY_NONE": "なし",
-  "SHOW_ACTOR_ART.VISIBILITY_GM_ONLY": "GMのみ",
-  "SHOW_ACTOR_ART.VISIBILITY_GM_AND_PLAYERS": "GMとプレイヤー",
-  "SHOW_ACTOR_ART.PLACEMENT_ACTORS": "キャラクター",
-  "SHOW_ACTOR_ART.PLACEMENT_ITEMS": "アイテム",
-  "SHOW_ACTOR_ART.PLACEMENT_ACTORS_AND_ITEMS": "キャラクターとアイテム",
-  "SHOW_ACTOR_ART.TOOLTIP_ONLY_YOU": "アートを表示 (あなただけ)",
-  "SHOW_ACTOR_ART.TOOLTIP_EVERYONE": "アートを表示 (全員)"
+  "SHOW_ACTOR_ART": {
+    "BUTTON_SETTINGS_MENU": "ボタン設定メニュー",
+    "BUTTON_SETTINGS_MENU_LABEL": "ボタン設定",
+    "BUTTON_SETTINGS_MENU_HINT": "ボタンの可視性と配置を設定します。",
+    "TOOLTIP_ONLY_YOU": "アート (あなた)",
+    "TOOLTIP_EVERYONE": "アート (全員)",
+    "OWNERSHIP_NONE": "権限なし",
+    "OWNERSHIP_LIMITED": "限定",
+    "OWNERSHIP_OBSERVER": "観察者",
+    "OWNERSHIP_OWNER": "所有者",
+    "FORM": {
+      "TITLE": "ボタン設定",
+      "HEADERS": {
+        "BUTTON": "ボタン",
+        "PLACEMENT_ACTORS": "アクター",
+        "PLACEMENT_ITEMS": "アイテム",
+        "PLACEMENT_JOURNAL": "ジャーナル",
+        "VISIBILITY_GM": "GM の可視性",
+        "VISIBILITY_PLAYERS": "プレイヤーの可視性"
+      },
+      "ROWS": {
+        "ONLY_YOU": "アート (あなた)",
+        "EVERYONE": "アート (全員)",
+        "OWNERSHIP": "権限"
+      },
+      "SAVE_BUTTON": "保存"
+    }
+  }
 }
