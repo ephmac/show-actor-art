@@ -1,6 +1,12 @@
 # Changelog
 
-## [1.1.0] - 2024-12-01
+## [1.2.0] - 2024-12-06
+### Added
+- **New Button:** Added a third button to toggle permissions for viewing actor, item, or journal sheets.
+- **Menu settings:** Reworked settings for a more user-friendly layout.
+
+
+## [1.1.0] - 2024-12-04
 ### Added
 - **Multi-language support:** Added translations for English, Polish, German, French, Spanish, Portuguese, Russian, Simplified Chinese, and Japanese.
 - **Tooltips localization:** Button tooltips now support dynamic translations based on the selected language.
@@ -12,7 +18,7 @@
     
 ---
 
-## [1.0.0] - 2024-11-25
+## [1.0.0] - 2024-12-02
 ### Added
 - **Core functionality:**
   - Button "Show Art" - shares artwork with all players.
