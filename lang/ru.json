@@ -1,18 +1,29 @@
 {
-  "SHOW_ACTOR_ART.ONLY_YOU_VISIBILITY": "Показать арт - Только вам (Видимость)",
-  "SHOW_ACTOR_ART.ONLY_YOU_VISIBILITY_HINT": "Кто может видеть эту кнопку.",
-  "SHOW_ACTOR_ART.ONLY_YOU_PLACEMENT": "Показать арт - Только вам (Расположение)",
-  "SHOW_ACTOR_ART.ONLY_YOU_PLACEMENT_HINT": "Где появится эта кнопка.",
-  "SHOW_ACTOR_ART.EVERYONE_VISIBILITY": "Показать арт - Всем (Видимость)",
-  "SHOW_ACTOR_ART.EVERYONE_VISIBILITY_HINT": "Кто может видеть эту кнопку.",
-  "SHOW_ACTOR_ART.EVERYONE_PLACEMENT": "Показать арт - Всем (Расположение)",
-  "SHOW_ACTOR_ART.EVERYONE_PLACEMENT_HINT": "Где появится эта кнопка.",
-  "SHOW_ACTOR_ART.VISIBILITY_NONE": "Нет",
-  "SHOW_ACTOR_ART.VISIBILITY_GM_ONLY": "Только GM",
-  "SHOW_ACTOR_ART.VISIBILITY_GM_AND_PLAYERS": "GM и игроки",
-  "SHOW_ACTOR_ART.PLACEMENT_ACTORS": "Актёры",
-  "SHOW_ACTOR_ART.PLACEMENT_ITEMS": "Предметы",
-  "SHOW_ACTOR_ART.PLACEMENT_ACTORS_AND_ITEMS": "Актёры и предметы",
-  "SHOW_ACTOR_ART.TOOLTIP_ONLY_YOU": "Показать арт (Только вам)",
-  "SHOW_ACTOR_ART.TOOLTIP_EVERYONE": "Показать арт (Всем)"
-}
+  "SHOW_ACTOR_ART": {
+    "BUTTON_SETTINGS_MENU": "Меню настройки кнопок",
+    "BUTTON_SETTINGS_MENU_LABEL": "Конфигурация кнопок",
+    "BUTTON_SETTINGS_MENU_HINT": "Настройте видимость и размещение кнопок.",
+    "TOOLTIP_ONLY_YOU": "Изображение (Вы)",
+    "TOOLTIP_EVERYONE": "Изображение (Все)",
+    "OWNERSHIP_NONE": "Нет прав",
+    "OWNERSHIP_LIMITED": "Ограниченные",
+    "OWNERSHIP_OBSERVER": "Наблюдатель",
+    "OWNERSHIP_OWNER": "Владелец",
+    "FORM": {
+      "TITLE": "Конфигурация кнопок",
+      "HEADERS": {
+        "BUTTON": "Кнопка",
+        "PLACEMENT_ACTORS": "Актёры",
+        "PLACEMENT_ITEMS": "Предметы",
+        "PLACEMENT_JOURNAL": "Журналы",
+        "VISIBILITY_GM": "Видимость GM",
+        "VISIBILITY_PLAYERS": "Видимость игроков"
+      },
+      "ROWS": {
+        "ONLY_YOU": "Изображение (Вы)",
+        "EVERYONE": "Изображение (Все)",
+        "OWNERSHIP": "Права"
+      },
+      "SAVE_BUTTON": "Сохранить"
+    }
+  }
