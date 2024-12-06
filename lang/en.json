@@ -1,18 +1,30 @@
 {
-  "SHOW_ACTOR_ART.ONLY_YOU_VISIBILITY": "Show Art - Only You (Visibility)",
-  "SHOW_ACTOR_ART.ONLY_YOU_VISIBILITY_HINT": "Who can see this button.",
-  "SHOW_ACTOR_ART.ONLY_YOU_PLACEMENT": "Show Art - Only You (Placement)",
-  "SHOW_ACTOR_ART.ONLY_YOU_PLACEMENT_HINT": "Where this button appears.",
-  "SHOW_ACTOR_ART.EVERYONE_VISIBILITY": "Show Art - Everyone (Visibility)",
-  "SHOW_ACTOR_ART.EVERYONE_VISIBILITY_HINT": "Who can see this button.",
-  "SHOW_ACTOR_ART.EVERYONE_PLACEMENT": "Show Art - Everyone (Placement)",
-  "SHOW_ACTOR_ART.EVERYONE_PLACEMENT_HINT": "Where this button appears.",
-  "SHOW_ACTOR_ART.VISIBILITY_NONE": "None",
-  "SHOW_ACTOR_ART.VISIBILITY_GM_ONLY": "GM Only",
-  "SHOW_ACTOR_ART.VISIBILITY_GM_AND_PLAYERS": "GM and Players",
-  "SHOW_ACTOR_ART.PLACEMENT_ACTORS": "Actors",
-  "SHOW_ACTOR_ART.PLACEMENT_ITEMS": "Items",
-  "SHOW_ACTOR_ART.PLACEMENT_ACTORS_AND_ITEMS": "Actors and Items",
-  "SHOW_ACTOR_ART.TOOLTIP_ONLY_YOU": "Show Art (Only You)",
-  "SHOW_ACTOR_ART.TOOLTIP_EVERYONE": "Show Art (Everyone)"
+  "SHOW_ACTOR_ART": {
+    "BUTTON_SETTINGS_MENU": "Button Settings Menu",
+    "BUTTON_SETTINGS_MENU_LABEL": "Button Configuration",
+    "BUTTON_SETTINGS_MENU_HINT": "Configure button visibility and placement.",
+    "TOOLTIP_ONLY_YOU": "Art (You)",
+    "TOOLTIP_EVERYONE": "Art (Everyone)",
+    "OWNERSHIP_NONE": "No Permissions",
+    "OWNERSHIP_LIMITED": "Limited",
+    "OWNERSHIP_OBSERVER": "Observer",
+    "OWNERSHIP_OWNER": "Owner",
+    "FORM": {
+      "TITLE": "Button Configuration",
+      "HEADERS": {
+        "BUTTON": "Button",
+        "PLACEMENT_ACTORS": "Actors",
+        "PLACEMENT_ITEMS": "Items",
+        "PLACEMENT_JOURNAL": "Journals",
+        "VISIBILITY_GM": "GM Visibility",
+        "VISIBILITY_PLAYERS": "Player Visibility"
+      },
+      "ROWS": {
+        "ONLY_YOU": "Art (You)",
+        "EVERYONE": "Art (Everyone)",
+        "OWNERSHIP": "Permissions"
+      },
+      "SAVE_BUTTON": "Save"
+    }
+  }
 }
