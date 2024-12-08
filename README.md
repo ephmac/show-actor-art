@@ -10,3 +10,7 @@ A FoundryVTT module that adds three configurable buttons for actors, items, and 
 
 ## Credits
 Created by Ephaltes with the assistance of ChatGPT.
+
+## Feedback
+You can leave your feedback here:
+https://github.com/ephmac/show-actor-art/discussions/1
