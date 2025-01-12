@@ -1,62 +1,68 @@
 {
-  "id": "show-actor-art",
-  "title": "Show Actor Art",
-  "description": "A FoundryVTT module that adds buttons to show actor and item artwork to all players.",
-  "version": "1.2.0",
-  "author": "Ephaltes & ChatGPT",
-  "scripts": ["show-actor-art.js"],
-  "styles": ["show-actor-art.css"],
-  "packs": [],
-"languages": [
-  {
-    "lang": "en",
-    "name": "English",
-    "path": "lang/en.json"
-  },
-  {
-    "lang": "pl",
-    "name": "Polski",
-    "path": "lang/pl.json"
-  },
-  {
-    "lang": "de",
-    "name": "Deutsch",
-    "path": "lang/de.json"
-  },
-  {
-    "lang": "fr",
-    "name": "Français",
-    "path": "lang/fr.json"
-  },
-  {
-    "lang": "es",
-    "name": "Español",
-    "path": "lang/es.json"
-  },
-  {
-    "lang": "pt",
-    "name": "Português",
-    "path": "lang/pt.json"
-  },
-  {
-    "lang": "ru",
-    "name": "Русский",
-    "path": "lang/ru.json"
-  },
-  {
-    "lang": "zh",
-    "name": "简体中文",
-    "path": "lang/zh.json"
-  },
-  {
-    "lang": "ja",
-    "name": "日本語",
-    "path": "lang/ja.json"
-  }
-],
-  "url": "https://github.com/ephmac/show-actor-art",
-  "manifest": "https://raw.githubusercontent.com/ephmac/show-actor-art/main/module.json",
-  "download": "https://github.com/ephmac/show-actor-art/archive/refs/heads/main.zip",
-  "minimumCoreVersion": "11",
-  "compatibleCoreVersion": "12"
+    "id": "show-actor-art",
+    "title": "Show Actor Art",
+    "description": "A FoundryVTT module that adds buttons to show actor and item artwork to all players.",
+    "version": "1.2.0",
+    "authors": [
+        {
+            "name": "Ephaltes"
+        }
+    ],
+    "scripts": ["show-actor-art.js"],
+    "styles": ["show-actor-art.css"],
+    "packs": [],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        },
+        {
+            "lang": "pl",
+            "name": "Polski",
+            "path": "lang/pl.json"
+        },
+        {
+            "lang": "de",
+            "name": "Deutsch",
+            "path": "lang/de.json"
+        },
+        {
+            "lang": "fr",
+            "name": "Français",
+            "path": "lang/fr.json"
+        },
+        {
+            "lang": "es",
+            "name": "Español",
+            "path": "lang/es.json"
+        },
+        {
+            "lang": "pt",
+            "name": "Português",
+            "path": "lang/pt.json"
+        },
+        {
+            "lang": "ru",
+            "name": "Русский",
+            "path": "lang/ru.json"
+        },
+        {
+            "lang": "zh",
+            "name": "简体中文",
+            "path": "lang/zh.json"
+        },
+        {
+            "lang": "ja",
+            "name": "日本語",
+            "path": "lang/ja.json"
+        }
+    ],
+    "url": "https://github.com/ephmac/show-actor-art",
+    "manifest": "https://raw.githubusercontent.com/ephmac/show-actor-art/main/module.json",
+    "download": "https://github.com/ephmac/show-actor-art/archive/refs/heads/main.zip",
+    "compatibility": {
+        "minimum": "10",
+        "verified": "12"
+    }
 }
