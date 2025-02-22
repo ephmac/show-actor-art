@@ -23,11 +23,6 @@ Hooks.once("init", () => {
     });
 });
 
-// 🔹 Inicjalizacja modułu
-Hooks.once("ready", () => {
-    watchSettingsForChanges();
-});
-
 // 🔹 Obsługa renderowania sidebaru
 Hooks.on("renderActorDirectory", (app, html, data) => enrichSidebar(html, "actor"));
 Hooks.on("renderItemDirectory", (app, html, data) => enrichSidebar(html, "item"));
