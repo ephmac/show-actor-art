@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.3.0] - 2025-02-22
+### Added
+- **Fix:** Refactored code to be system-independent, ensuring compatibility across different game systems in Foundry VTT.
+
 ## [1.2.0] - 2024-12-06
 ### Added
 - **New Button:** Added a third button to toggle permissions for viewing actor, item, or journal sheets.
