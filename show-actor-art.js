@@ -59,7 +59,6 @@ function refreshSidebarButtons() {
 
 // 🔹 Dodawanie przycisków do sidebaru
 function enrichSidebar(html, type) {
-    console.log("📂 enrichSidebar() wywołane dla:", type);
     const settings = game.settings.get("show-actor-art", "buttonSettings");
 
     html.find(".directory-item.document").each((_, element) => {
@@ -242,7 +241,6 @@ function updateOwnershipColor(button, element) {
     };
 
     button.style.color = ownershipColors[ownershipLevel] || "#cccccc";
-    console.log(`🎨 Ustawiono kolor Ownership Button dla ${entityId}:`, button.style.color);
 }
 
 Hooks.on("updateActor", (actor) => updateOwnershipColorForAll());
