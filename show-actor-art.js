@@ -24,14 +24,42 @@ Hooks.once("init", () => {
 });
 
 // 🔹 Obsługa renderowania sidebaru
-Hooks.on("renderActorDirectory", (app, html, data) => enrichSidebar(html, "actor"));
-Hooks.on("renderItemDirectory", (app, html, data) => enrichSidebar(html, "item"));
-Hooks.on("renderJournalDirectory", (app, html, data) => enrichSidebar(html, "journal"));
+Hooks.on("renderActorDirectory", (app, html, data) => {
+    const container = html[0] ?? html;
+    if (!container) return;
+
+    // Retry co 100ms aż znajdzie elementy
+    let retries = 0;
+    const maxRetries = 10;
+
+    function tryInject() {
+        const elements = container.querySelectorAll(".directory-item.document");
+        if (elements.length > 0 || retries >= maxRetries) {
+            enrichSidebar(container, "actor");
+        } else {
+            retries++;
+            setTimeout(tryInject, 100);
+        }
+    }
+
+    tryInject();
+});
+Hooks.on("renderItemDirectory", (app, html, data) => {
+    const container = html[0] ?? html;
+    if (!container) return;
+    setTimeout(() => enrichSidebar(container, "item"), 50);
+});
+Hooks.on("renderJournalDirectory", (app, html, data) => {
+    const container = html[0] ?? html;
+    if (!container) return;
+    setTimeout(() => enrichSidebar(container, "journal"), 50);
+});
+
 
 // 🔹 Klasa formularza ustawień
 class ButtonSettingsForm extends FormApplication {
     static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             id: "button-settings-form",
             title: "Button Configuration",
             template: "modules/show-actor-art/templates/settings-form.html",
@@ -41,28 +69,41 @@ class ButtonSettingsForm extends FormApplication {
     }
 
     getData() {
-        return { settings: game.settings.get("show-actor-art", "buttonSettings") };
+        return {
+            settings: game.settings.get("show-actor-art", "buttonSettings")
+        };
     }
 
     async _updateObject(event, formData) {
-        const updatedSettings = expandObject(formData);
+        const updatedSettings = foundry.utils.expandObject(formData);
         await game.settings.set("show-actor-art", "buttonSettings", updatedSettings);
         ui.notifications.info("Button settings updated.");
         refreshSidebarButtons();
     }
 }
 
+
 // 🔹 Odświeżanie sidebaru
 function refreshSidebarButtons() {
-    [ui.actors, ui.items, ui.journal].forEach(dir => dir?.render(true));
+    for (const dir of [ui.actors, ui.items, ui.journal]) {
+        dir?.render?.(true);
+    }
 }
 
 // 🔹 Dodawanie przycisków do sidebaru
-function enrichSidebar(html, type) {
+function enrichSidebar(html, type, retry = 0) {
+    const maxRetries = 10;
+    const elements = html.querySelectorAll(".directory-item.document");
+
+    if (elements.length === 0 && type === "actor" && retry < maxRetries) {
+        setTimeout(() => enrichSidebar(html, type, retry + 1), 100);
+        return;
+    }
+
     const settings = game.settings.get("show-actor-art", "buttonSettings");
 
-    html.find(".directory-item.document").each((_, element) => {
-        // Przyciski "Only You" (widoczność zależna od ustawień)
+    elements.forEach((element) => {
+        // Twoja logika dodawania przycisków
         if (
             (type === "actor" && settings.onlyYou.placement.actors && shouldDisplayButton(settings.onlyYou.visibility)) ||
             (type === "item" && settings.onlyYou.placement.items && shouldDisplayButton(settings.onlyYou.visibility))
@@ -70,7 +111,6 @@ function enrichSidebar(html, type) {
             addButton(element, "onlyYou");
         }
 
-        // Przyciski "Everyone" (widoczność zależna od ustawień)
         if (
             (type === "actor" && settings.everyone.placement.actors && shouldDisplayButton(settings.everyone.visibility)) ||
             (type === "item" && settings.everyone.placement.items && shouldDisplayButton(settings.everyone.visibility))
@@ -78,7 +118,6 @@ function enrichSidebar(html, type) {
             addButton(element, "everyone");
         }
 
-        // Przyciski "Ownership" (widoczne TYLKO dla MG)
         if (
             (type === "actor" && settings.ownership.placement.actors && game.user.isGM) ||
             (type === "item" && settings.ownership.placement.items && game.user.isGM) ||
@@ -89,8 +128,12 @@ function enrichSidebar(html, type) {
     });
 }
 
+
 // 🔹 Tworzenie przycisku i obsługa akcji
 function addButton(element, buttonType) {
+    // 🔧 Zapobiegaj duplikowaniu przycisków
+    if (element.querySelector(`.roll-table.${buttonType}`)) return;
+
     const buttonSettings = {
         onlyYou: { icon: "fa-eye", tooltip: "SHOW_ACTOR_ART.TOOLTIP_ONLY_YOU" },
         everyone: { icon: "fa-share-alt", tooltip: "SHOW_ACTOR_ART.TOOLTIP_EVERYONE" },
@@ -110,10 +153,23 @@ function addButton(element, buttonType) {
     element.appendChild(button);
 }
 
+
 // 🔹 Obsługa kliknięcia przycisku
 async function handleButtonClick(buttonType, element) {
-    const entityId = element.dataset.documentId;
-    const entity = game.actors.get(entityId) || game.items.get(entityId) || game.journal.get(entityId);
+    // Jeśli kliknięto sam przycisk (a nie <li>), szukaj ID na sobie
+    const entityId = element.dataset.entityId 
+                  ?? element.closest(".directory-item")?.dataset.id 
+                  ?? element.closest(".directory-item")?.dataset.entryId 
+                  ?? element.closest(".directory-item")?.dataset.documentId;
+
+    if (!entityId) {
+        console.warn("⚠️ Brak ID w klikniętym elemencie:", element);
+        return;
+    }
+
+    const entity = game.actors?.get(entityId)
+                ?? game.items?.get(entityId)
+                ?? game.journal?.contents.find(j => j.id === entityId);
 
     if (!entity) {
         console.error("❌ Entity not found for button action.");
@@ -148,6 +204,9 @@ function createButton(iconClass, tooltipKey, onClick, buttonType, element) {
     let button = document.createElement("a");
     button.classList.add("roll-table", buttonType);
     button.setAttribute("title", game.i18n.localize(tooltipKey));
+
+    const docId = element.dataset.id ?? element.dataset.entryId ?? element.dataset.documentId;
+    if (docId) button.dataset.entityId = docId;
 
     Object.assign(button.style, {
         all: "unset",
@@ -201,11 +260,6 @@ function createButton(iconClass, tooltipKey, onClick, buttonType, element) {
             button.setAttribute("title", game.i18n.localize("SHOW_ACTOR_ART.TOOLTIP_OWNERSHIP"));
         }
     });
-    
-    button.addEventListener("mouseleave", () => {
-        button.style.borderColor = "transparent";
-        button.style.transform = "scale(1)";
-    });
 
     // 🔹 Jeśli to przycisk Ownership, ustaw kolor zgodnie z poziomem uprawnień
     if (buttonType === "ownership") {
@@ -218,13 +272,20 @@ function createButton(iconClass, tooltipKey, onClick, buttonType, element) {
 
 // 🔹 Automatyczna aktualizacja koloru
 function updateOwnershipColor(button, element) {
-    if (!element || !element.dataset || !element.dataset.documentId) {
-        console.warn("❌ `element` nie ma poprawnego ID dokumentu.");
+const entityId = element.dataset?.entityId 
+              ?? element.closest(".directory-item")?.dataset?.id 
+              ?? element.closest(".directory-item")?.dataset?.entryId 
+              ?? element.closest(".directory-item")?.dataset?.documentId;
+
+    if (!entityId) {
+        console.warn("❌ Nie znaleziono ID dokumentu w elemencie:", element);
         return;
     }
 
-    const entityId = element.dataset.documentId;
-    const entity = game.actors.get(entityId) || game.items.get(entityId) || game.journal.get(entityId);
+    const entity = game.actors?.get(entityId) ||
+               game.items?.get(entityId) ||
+               game.journal?.contents.find(j => j.id === entityId);
+
 
     if (!entity) {
         console.warn("❌ Nie znaleziono encji dla ID:", entityId);
@@ -249,19 +310,43 @@ Hooks.on("updateJournalEntry", (journal) => updateOwnershipColorForAll());
 
 function updateOwnershipColorForAll() {
     document.querySelectorAll(".ownership-button").forEach(button => {
-        const element = button.closest(".directory-item.document");
-        if (element) updateOwnershipColor(button, element);
+        const entityId = button.dataset.entityId;
+        if (!entityId) return;
+
+        const entity = game.actors.get(entityId)
+                    ?? game.items.get(entityId)
+                    ?? game.journal?.contents.find(j => j.id === entityId);
+
+        if (!entity) return;
+
+        const ownershipLevel = entity.ownership?.default ?? 0;
+        const ownershipColors = {
+            0: "#cc6666",
+            1: "#ff8000",
+            2: "#ffff00",
+            3: "#66cc66"
+        };
+
+        button.style.color = ownershipColors[ownershipLevel] || "#cccccc";
     });
 }
 
-function updateOwnershipTooltip(button, element) {
-    if (!element || !element.dataset || !element.dataset.documentId) {
-        console.warn("❌ `element` nie ma poprawnego ID dokumentu.");
-        return;
-    }
 
-    const entityId = element.dataset.documentId;
-    const entity = game.actors.get(entityId) || game.items.get(entityId) || game.journal.get(entityId);
+function updateOwnershipTooltip(button, element) {
+const entityId = element.dataset?.entityId 
+              ?? element.closest(".directory-item")?.dataset?.id 
+              ?? element.closest(".directory-item")?.dataset?.entryId 
+              ?? element.closest(".directory-item")?.dataset?.documentId;
+
+if (!entityId) {
+    console.warn("❌ Nie znaleziono ID dokumentu w elemencie:", element);
+    return;
+}
+
+    const entity = game.actors?.get(entityId) ||
+               game.items?.get(entityId) ||
+               game.journal?.contents.find(j => j.id === entityId);
+
 
     if (!entity) {
         console.warn("❌ Nie znaleziono encji dla ID:", entityId);
