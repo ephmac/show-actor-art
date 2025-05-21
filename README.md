@@ -1,4 +1,4 @@
-# Show Actor Art
+# Sidebar Portrait Buttons ⫷𝗘𝗣𝗛⫸
 
 A FoundryVTT module that adds three configurable buttons for actors, items, and journals.
 
