@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.4.0] - 2025-05-21
+### Changed
+- Renamed module title to: Sidebar Portrait Buttons ⫷𝗘𝗣𝗛⫸.
+- Refactored event logic and dataset handling to ensure full compatibility with Foundry VTT v13.
+
 ## [1.3.0] - 2025-02-22
 ### Added
 - **Fix:** Refactored code to be system-independent, ensuring compatibility across different game systems in Foundry VTT.
