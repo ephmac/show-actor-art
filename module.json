@@ -1,15 +1,21 @@
 {
     "id": "show-actor-art",
-    "title": "Sidebar Portrait Buttons ⫷𝗘𝗣𝗛⫸",
-    "description": "A FoundryVTT module that adds buttons to show actor and item artwork to all players.",
-    "version": "1.4.0",
+    "title": "Sidebar Buttons ⫷𝗘𝗣𝗛⫸",
+    "description": "Configurable sidebar buttons for quick document actions.",
+    "version": "2.0",
+    "type": "module",
     "authors": [
         {
             "name": "Ephaltes"
         }
     ],
-    "scripts": ["show-actor-art.js"],
+    "esmodules": [
+        "scripts/main.js"
+    ],
     "packs": [],
+    "styles": [
+        "styles/styles.css"
+    ],
     "languages": [
         {
             "lang": "en",
