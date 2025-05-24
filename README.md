@@ -1,16 +1,37 @@
-# Sidebar Portrait Buttons ⫷𝗘𝗣𝗛⫸
+# Sidebar Buttons ⫷𝗘𝗣𝗛⫸
 
-A FoundryVTT module that adds three configurable buttons for actors, items, and journals.
+A lightweight and customizable FoundryVTT module that adds contextual buttons to the sidebar directories: Actors, Items, Journals, Macros, and Roll Tables.
 
-## Features
-- Personal View Button: Displays artwork to the user who clicks it.
-- Broadcast View Button: Displays artwork to all players.
-- Permission Toggle Button: Adjusts permissions for viewing actor, item, or journal sheets.
-- Buttons can be enabled or disabled in the settings menu based on user preferences.
+## 🎯 Features
 
-## Credits
-Created by Ephaltes with the assistance of ChatGPT.
+- **Personal View Button** – Displays actor or item artwork locally to the user.
+- **Broadcast View Button** – Shares actor or item artwork with all connected players.
+- **Permission Toggle Button** – Cycles through ownership levels (None, Limited, Observer, Owner) for actors, items, and journals.
+- **Roll Button** – Rolls directly from a Roll Table entry in the sidebar.
+- **Run Macro Button** – Instantly executes macros from the Macros directory.
+- **Settings Panel** – Choose which buttons are visible per directory and per role (GM/Player).
 
-## Feedback
-You can leave your feedback here:
-https://github.com/ephmac/show-actor-art/discussions/1
+All buttons are optional and configurable through a simple settings interface.
+
+## 🌐 Localization
+
+Translated into:
+- 🇬🇧 English
+- 🇵🇱 Polish
+- 🇩🇪 German (chat GPT)
+- 🇫🇷 French (chat GPT)
+- 🇪🇸 Spanish (chat GPT)
+- 🇵🇹 Portuguese (chat GPT)
+- 🇷🇺 Russian (chat GPT)
+- 🇨🇳 Simplified Chinese (chat GPT)
+- 🇯🇵 Japanese (chat GPT)
+
+## 👨‍💻 Credits
+
+Created by **Ephaltes** 
+Icons used from [Font Awesome](https://fontawesome.com/) and the Foundry UI.
+
+## 💬 Feedback
+
+Found a bug or have a suggestion? Join my Discord channel:  
+🔗 https://discord.gg/9p9jsVmv
