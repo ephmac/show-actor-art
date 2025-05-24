@@ -1,0 +1,86 @@
+.sidebarButtons_linia {
+  display: grid;
+  grid-template-columns: 1fr 50px 50px;
+  align-items: center;
+  gap: 10px;
+}
+.sidebarButtons_linia input[type="checkbox"] {
+  justify-self: center;
+}
+.sidebarButtons_kategoria {
+  font-weight: bold;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #999;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.sidebarButtons_legenda {
+  display: grid;
+  grid-template-columns: 1fr 50px 50px;
+  gap: 10px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px solid #999;
+  padding-bottom: 4px;
+  margin-bottom: 6px;
+}
+.sidebarButtons_przyciskZamknij {
+  margin-top: 12px;
+  padding: 6px 12px;
+  font-weight: bold;
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #888;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.sidebarButtons_przyciskZamknij:hover {
+  background-color: #666;
+}
+
+
+
+.sidebarButtons_przycisk {
+  all: unset;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  margin-right: 4px;
+  font-size: 0.8rem;
+  border-radius: 2px;
+  cursor: pointer;
+  color: #999;
+  transition: background-color 0.2s, color 0.2s;
+}
+.sidebarButtons_przycisk:hover {
+  background-color: #ddd;
+  color: #000;
+}
+.sidebarButtons_uprawnienia {
+  color: inherit;
+}
+.sidebarButtons_uprawnienia:hover {
+  background-color: #ddd;
+  color: inherit;
+}
+.directory-item.document {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.directory-item.document .document-name {
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.directory-item.document .sidebarButtons_przycisk {
+  flex-shrink: 0;
+}
+
