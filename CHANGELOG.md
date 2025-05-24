@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.0] - 2025-05-24
+### Added
+- New Buttons: Added support for Roll Tables and Macros in the sidebar directory.
+### Changed
+- Module Title: Renamed to: Sidebar Buttons ⫷𝗘𝗣𝗛⫸.
+- Settings UI: Settings panel redesigned for improved clarity and usability.
+- Icon Styling: Updated styling and hover effects for sidebar buttons.
+
 ## [1.4.0] - 2025-05-21
 ### Changed
 - Renamed module title to: Sidebar Portrait Buttons ⫷𝗘𝗣𝗛⫸.
