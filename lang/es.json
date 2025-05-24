@@ -1,30 +1,33 @@
 {
-  "SHOW_ACTOR_ART": {
-    "BUTTON_SETTINGS_MENU": "Menú de configuración de botones",
-    "BUTTON_SETTINGS_MENU_LABEL": "Configuración de botones",
-    "BUTTON_SETTINGS_MENU_HINT": "Configurar visibilidad y ubicación de los botones.",
-    "TOOLTIP_ONLY_YOU": "Arte (Tú)",
-    "TOOLTIP_EVERYONE": "Arte (Todos)",
-    "OWNERSHIP_NONE": "Sin permisos",
-    "OWNERSHIP_LIMITED": "Limitado",
-    "OWNERSHIP_OBSERVER": "Observador",
-    "OWNERSHIP_OWNER": "Propietario",
-    "FORM": {
-      "TITLE": "Configuración de botones",
-      "HEADERS": {
-        "BUTTON": "Botón",
-        "PLACEMENT_ACTORS": "Actores",
-        "PLACEMENT_ITEMS": "Objetos",
-        "PLACEMENT_JOURNAL": "Diarios",
-        "VISIBILITY_GM": "Visibilidad del GM",
-        "VISIBILITY_PLAYERS": "Visibilidad de los jugadores"
-      },
-      "ROWS": {
-        "ONLY_YOU": "Arte (Tú)",
-        "EVERYONE": "Arte (Todos)",
-        "OWNERSHIP": "Permisos"
-      },
-      "SAVE_BUTTON": "Guardar"
-    }
-  }
+  "sidebarButtons.GrafikaTy": "Imagen (DJ)",
+  "sidebarButtons.GrafikaWszyscy": "Imagen (jugadores)",
+  "sidebarButtons.Uprawniania": "Permisos",
+  "sidebarButtons.rzuc": "Tirada de tabla",
+  "sidebarButtons.UzyjMakra": "Ejecutar macro",
+
+  "sidebarButtons.grafikaTyPodpowiedz": "Mostrar imagen",
+  "sidebarButtons.grafikaWszyscyPodpowiedz": "Compartir imagen con los jugadores",
+  "sidebarButtons.rzucPodpowiedz": "Tirar en esta tabla",
+  "sidebarButtons.uzyjMakraPodpowiedz": "Ejecutar el macro",
+
+  "sidebarButtons.uprawnieniaNone": "Sin acceso",
+  "sidebarButtons.uprawnieniaLimited": "Limitado",
+  "sidebarButtons.uprawnieniaObserver": "Observador",
+  "sidebarButtons.uprawnieniaOwner": "Propietario",
+
+  "sidebarButtons.ustawieniaSidebarButtons": "Configuración de botones del panel lateral",
+  "sidebarButtons.ustawieniaPodpowiedz": "Elige qué botones son visibles para jugadores y DJ",
+
+  "sidebarButtons.Przycisk": "Botón",
+  "sidebarButtons.GM": "DJ",
+  "sidebarButtons.Gracze": "Jugadores",
+
+  "sidebarButtons.Aktorzy": "Actores",
+  "sidebarButtons.Przedmioty": "Objetos",
+  "sidebarButtons.Dzienniki": "Diarios",
+  "sidebarButtons.Tablice": "Tablas aleatorias",
+  "sidebarButtons.Makra": "Macros",
+
+  "sidebarButtons.Zamknij": "Cerrar",
+  "sidebarButtons.GraczeMuszaOdswiezyc": "Nota: los jugadores deben actualizar Foundry para ver los cambios."
 }

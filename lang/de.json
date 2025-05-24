@@ -1,30 +1,33 @@
 {
-  "SHOW_ACTOR_ART": {
-    "BUTTON_SETTINGS_MENU": "Schaltflächeneinstellungsmenü",
-    "BUTTON_SETTINGS_MENU_LABEL": "Schaltflächenkonfiguration",
-    "BUTTON_SETTINGS_MENU_HINT": "Sichtbarkeit und Platzierung der Schaltflächen konfigurieren.",
-    "TOOLTIP_ONLY_YOU": "Grafik (Du)",
-    "TOOLTIP_EVERYONE": "Grafik (Alle)",
-    "OWNERSHIP_NONE": "Keine Berechtigungen",
-    "OWNERSHIP_LIMITED": "Begrenzt",
-    "OWNERSHIP_OBSERVER": "Beobachter",
-    "OWNERSHIP_OWNER": "Besitzer",
-    "FORM": {
-      "TITLE": "Schaltflächenkonfiguration",
-      "HEADERS": {
-        "BUTTON": "Schaltfläche",
-        "PLACEMENT_ACTORS": "Schauspieler",
-        "PLACEMENT_ITEMS": "Gegenstände",
-        "PLACEMENT_JOURNAL": "Journale",
-        "VISIBILITY_GM": "GM-Sichtbarkeit",
-        "VISIBILITY_PLAYERS": "Spielersichtbarkeit"
-      },
-      "ROWS": {
-        "ONLY_YOU": "Grafik (Du)",
-        "EVERYONE": "Grafik (Alle)",
-        "OWNERSHIP": "Berechtigungen"
-      },
-      "SAVE_BUTTON": "Speichern"
-    }
-  }
+  "sidebarButtons.GrafikaTy": "Bild (SL)",
+  "sidebarButtons.GrafikaWszyscy": "Bild (Spieler)",
+  "sidebarButtons.Uprawniania": "Zugriffsrechte",
+  "sidebarButtons.rzuc": "Tabelle würfeln",
+  "sidebarButtons.UzyjMakra": "Makro ausführen",
+
+  "sidebarButtons.grafikaTyPodpowiedz": "Bild anzeigen",
+  "sidebarButtons.grafikaWszyscyPodpowiedz": "Bild mit Spielern teilen",
+  "sidebarButtons.rzucPodpowiedz": "Auf dieser Tabelle würfeln",
+  "sidebarButtons.uzyjMakraPodpowiedz": "Makro ausführen",
+
+  "sidebarButtons.uprawnieniaNone": "Kein Zugriff",
+  "sidebarButtons.uprawnieniaLimited": "Eingeschränkt",
+  "sidebarButtons.uprawnieniaObserver": "Beobachter",
+  "sidebarButtons.uprawnieniaOwner": "Besitzer",
+
+  "sidebarButtons.ustawieniaSidebarButtons": "Sidebar-Button-Einstellungen",
+  "sidebarButtons.ustawieniaPodpowiedz": "Wähle aus, welche Buttons für Spieler und SL sichtbar sind",
+
+  "sidebarButtons.Przycisk": "Button",
+  "sidebarButtons.GM": "SL",
+  "sidebarButtons.Gracze": "Spieler",
+
+  "sidebarButtons.Aktorzy": "Charaktere",
+  "sidebarButtons.Przedmioty": "Gegenstände",
+  "sidebarButtons.Dzienniki": "Journal",
+  "sidebarButtons.Tablice": "Würfeltabellen",
+  "sidebarButtons.Makra": "Makros",
+
+  "sidebarButtons.Zamknij": "Schließen",
+  "sidebarButtons.GraczeMuszaOdswiezyc": "Hinweis: Spieler müssen Foundry neu laden, um Änderungen zu sehen."
 }

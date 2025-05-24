@@ -1,30 +1,33 @@
 {
-  "SHOW_ACTOR_ART": {
-    "BUTTON_SETTINGS_MENU": "Menu ustawień przycisków",
-    "BUTTON_SETTINGS_MENU_LABEL": "Konfiguracja przycisków",
-    "BUTTON_SETTINGS_MENU_HINT": "Skonfiguruj widoczność i rozmieszczenie przycisków.",
-    "TOOLTIP_ONLY_YOU": "Grafika (Ty)",
-    "TOOLTIP_EVERYONE": "Grafika (Wszyscy)",
-    "OWNERSHIP_NONE": "Brak uprawnień",
-    "OWNERSHIP_LIMITED": "Ograniczone",
-    "OWNERSHIP_OBSERVER": "Obserwator",
-    "OWNERSHIP_OWNER": "Właściciel",
-    "FORM": {
-      "TITLE": "Konfiguracja przycisków",
-      "HEADERS": {
-        "BUTTON": "Przycisk",
-        "PLACEMENT_ACTORS": "Aktorzy",
-        "PLACEMENT_ITEMS": "Przedmioty",
-        "PLACEMENT_JOURNAL": "Dzienniki",
-        "VISIBILITY_GM": "Widoczność GM",
-        "VISIBILITY_PLAYERS": "Widoczność graczy"
-      },
-      "ROWS": {
-        "ONLY_YOU": "Grafika (Ty)",
-        "EVERYONE": "Grafika (Wszyscy)",
-        "OWNERSHIP": "Uprawnienia"
-      },
-      "SAVE_BUTTON": "Zapisz"
-    }
-  }
+  "sidebarButtons.GrafikaTy": "Grafika (MG)",
+  "sidebarButtons.GrafikaWszyscy": "Grafika (gracze)",
+  "sidebarButtons.Uprawniania": "Uprawnienia",
+  "sidebarButtons.rzuc": "Rzut z tablicy",
+  "sidebarButtons.UzyjMakra": "Użyj makra",
+
+  "sidebarButtons.grafikaTyPodpowiedz": "Wyświetl grafikę",
+  "sidebarButtons.grafikaWszyscyPodpowiedz": "Pokaż grafikę graczom",
+  "sidebarButtons.rzucPodpowiedz": "Wykonaj rzut na tej tablicy",
+  "sidebarButtons.uzyjMakraPodpowiedz": "Uruchom makro",
+
+  "sidebarButtons.uprawnieniaNone": "Brak uprawnień",
+  "sidebarButtons.uprawnieniaLimited": "Ograniczony",
+  "sidebarButtons.uprawnieniaObserver": "Obserwator",
+  "sidebarButtons.uprawnieniaOwner": "Właściciel",
+
+  "sidebarButtons.ustawieniaSidebarButtons": "Ustawienia przycisków sidebaru",
+  "sidebarButtons.ustawieniaPodpowiedz": "Wybierz, które przyciski mają być widoczne dla graczy i MG",
+
+  "sidebarButtons.Przycisk": "Przycisk",
+  "sidebarButtons.GM": "MG",
+  "sidebarButtons.Gracze": "Gracze",
+
+  "sidebarButtons.Aktorzy": "Aktorzy",
+  "sidebarButtons.Przedmioty": "Przedmioty",
+  "sidebarButtons.Dzienniki": "Dziennik",
+  "sidebarButtons.Tablice": "Tablice",
+  "sidebarButtons.Makra": "Makra",
+
+  "sidebarButtons.Zamknij": "Zamknij",
+  "sidebarButtons.GraczeMuszaOdswiezyc": "Uwaga: gracze muszą odświeżyć Foundry, by zobaczyć zmiany."
 }

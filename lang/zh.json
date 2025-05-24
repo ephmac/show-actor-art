@@ -1,30 +1,33 @@
 {
-  "SHOW_ACTOR_ART": {
-    "BUTTON_SETTINGS_MENU": "按钮设置菜单",
-    "BUTTON_SETTINGS_MENU_LABEL": "按钮配置",
-    "BUTTON_SETTINGS_MENU_HINT": "配置按钮的可见性和位置。",
-    "TOOLTIP_ONLY_YOU": "艺术 (你)",
-    "TOOLTIP_EVERYONE": "艺术 (所有人)",
-    "OWNERSHIP_NONE": "无权限",
-    "OWNERSHIP_LIMITED": "受限",
-    "OWNERSHIP_OBSERVER": "观察者",
-    "OWNERSHIP_OWNER": "所有者",
-    "FORM": {
-      "TITLE": "按钮配置",
-      "HEADERS": {
-        "BUTTON": "按钮",
-        "PLACEMENT_ACTORS": "角色",
-        "PLACEMENT_ITEMS": "物品",
-        "PLACEMENT_JOURNAL": "日志",
-        "VISIBILITY_GM": "GM 可见性",
-        "VISIBILITY_PLAYERS": "玩家可见性"
-      },
-      "ROWS": {
-        "ONLY_YOU": "艺术 (你)",
-        "EVERYONE": "艺术 (所有人)",
-        "OWNERSHIP": "权限"
-      },
-      "SAVE_BUTTON": "保存"
-    }
-  }
+  "sidebarButtons.GrafikaTy": "图像（GM）",
+  "sidebarButtons.GrafikaWszyscy": "图像（玩家）",
+  "sidebarButtons.Uprawniania": "权限",
+  "sidebarButtons.rzuc": "投掷表格",
+  "sidebarButtons.UzyjMakra": "执行宏",
+
+  "sidebarButtons.grafikaTyPodpowiedz": "显示图像",
+  "sidebarButtons.grafikaWszyscyPodpowiedz": "与玩家分享图像",
+  "sidebarButtons.rzucPodpowiedz": "在此表格上投掷",
+  "sidebarButtons.uzyjMakraPodpowiedz": "执行宏指令",
+
+  "sidebarButtons.uprawnieniaNone": "无权限",
+  "sidebarButtons.uprawnieniaLimited": "受限",
+  "sidebarButtons.uprawnieniaObserver": "观察者",
+  "sidebarButtons.uprawnieniaOwner": "所有者",
+
+  "sidebarButtons.ustawieniaSidebarButtons": "侧边栏按钮设置",
+  "sidebarButtons.ustawieniaPodpowiedz": "选择哪些按钮对玩家和GM可见",
+
+  "sidebarButtons.Przycisk": "按钮",
+  "sidebarButtons.GM": "GM",
+  "sidebarButtons.Gracze": "玩家",
+
+  "sidebarButtons.Aktorzy": "角色",
+  "sidebarButtons.Przedmioty": "物品",
+  "sidebarButtons.Dzienniki": "日志",
+  "sidebarButtons.Tablice": "掷骰表",
+  "sidebarButtons.Makra": "宏指令",
+
+  "sidebarButtons.Zamknij": "关闭",
+  "sidebarButtons.GraczeMuszaOdswiezyc": "注意：玩家需要刷新 Foundry 才能看到更改。"
 }

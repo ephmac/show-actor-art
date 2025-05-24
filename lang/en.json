@@ -1,30 +1,33 @@
 {
-  "SHOW_ACTOR_ART": {
-    "BUTTON_SETTINGS_MENU": "Button Settings Menu",
-    "BUTTON_SETTINGS_MENU_LABEL": "Button Configuration",
-    "BUTTON_SETTINGS_MENU_HINT": "Configure button visibility and placement.",
-    "TOOLTIP_ONLY_YOU": "Art (You)",
-    "TOOLTIP_EVERYONE": "Art (Everyone)",
-    "OWNERSHIP_NONE": "No Permissions",
-    "OWNERSHIP_LIMITED": "Limited",
-    "OWNERSHIP_OBSERVER": "Observer",
-    "OWNERSHIP_OWNER": "Owner",
-    "FORM": {
-      "TITLE": "Button Configuration",
-      "HEADERS": {
-        "BUTTON": "Button",
-        "PLACEMENT_ACTORS": "Actors",
-        "PLACEMENT_ITEMS": "Items",
-        "PLACEMENT_JOURNAL": "Journals",
-        "VISIBILITY_GM": "GM Visibility",
-        "VISIBILITY_PLAYERS": "Player Visibility"
-      },
-      "ROWS": {
-        "ONLY_YOU": "Art (You)",
-        "EVERYONE": "Art (Everyone)",
-        "OWNERSHIP": "Permissions"
-      },
-      "SAVE_BUTTON": "Save"
-    }
-  }
+  "sidebarButtons.GrafikaTy": "Artwork (GM)",
+  "sidebarButtons.GrafikaWszyscy": "Artwork (players)",
+  "sidebarButtons.Uprawniania": "Ownership",
+  "sidebarButtons.rzuc": "Roll from table",
+  "sidebarButtons.UzyjMakra": "Run macro",
+
+  "sidebarButtons.grafikaTyPodpowiedz": "Show artwork",
+  "sidebarButtons.grafikaWszyscyPodpowiedz": "Share artwork with players",
+  "sidebarButtons.rzucPodpowiedz": "Roll on this table",
+  "sidebarButtons.uzyjMakraPodpowiedz": "Execute macro",
+
+  "sidebarButtons.uprawnieniaNone": "None",
+  "sidebarButtons.uprawnieniaLimited": "Limited",
+  "sidebarButtons.uprawnieniaObserver": "Observer",
+  "sidebarButtons.uprawnieniaOwner": "Owner",
+
+  "sidebarButtons.ustawieniaSidebarButtons": "Sidebar Button Settings",
+  "sidebarButtons.ustawieniaPodpowiedz": "Choose which buttons are visible for players and GMs",
+
+  "sidebarButtons.Przycisk": "Button",
+  "sidebarButtons.GM": "GM",
+  "sidebarButtons.Gracze": "Players",
+
+  "sidebarButtons.Aktorzy": "Actors",
+  "sidebarButtons.Przedmioty": "Items",
+  "sidebarButtons.Dzienniki": "Journal",
+  "sidebarButtons.Tablice": "Rollable Tables",
+  "sidebarButtons.Makra": "Macros",
+
+  "sidebarButtons.Zamknij": "Close",
+  "sidebarButtons.GraczeMuszaOdswiezyc": "Note: players need to refresh Foundry to see changes."
 }
