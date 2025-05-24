@@ -1,0 +1,89 @@
+<form>
+  {{!-- Legenda --}}
+  <div class="sidebarButtons_legenda">
+    <span>{{localize "sidebarButtons.Przycisk"}}</span>
+    <span>{{localize "sidebarButtons.GM"}}</span>
+    <span>{{localize "sidebarButtons.Gracze"}}</span>
+  </div>
+
+  {{!-- Aktorzy --}}
+  <div class="sidebarButtons_kategoria">{{localize "sidebarButtons.Aktorzy"}}</div>
+
+  <div class="sidebarButtons_linia">
+    <span><i class="fas fa-eye"></i> {{localize "sidebarButtons.GrafikaTy"}}</span>
+    <input type="checkbox" name="grafikaTy.aktorzy.gm" {{#if ustawienia.grafikaTy.aktorzy.gm}}checked{{/if}} />
+    <input type="checkbox" name="grafikaTy.aktorzy.gracze" {{#if ustawienia.grafikaTy.aktorzy.gracze}}checked{{/if}} />
+  </div>
+
+  <div class="sidebarButtons_linia">
+    <span><i class="fas fa-share-alt"></i> {{localize "sidebarButtons.GrafikaWszyscy"}}</span>
+    <input type="checkbox" name="grafikaWszyscy.aktorzy.gm" {{#if ustawienia.grafikaWszyscy.aktorzy.gm}}checked{{/if}} />
+    <input type="checkbox" name="grafikaWszyscy.aktorzy.gracze" {{#if ustawienia.grafikaWszyscy.aktorzy.gracze}}checked{{/if}} />
+  </div>
+
+  <div class="sidebarButtons_linia">
+    <span><i class="fas fa-lock"></i> {{localize "sidebarButtons.Uprawniania"}}</span>
+    <input type="checkbox" name="uprawnienia.aktorzy.gm" {{#if ustawienia.uprawnienia.aktorzy.gm}}checked{{/if}} />
+    <span></span>
+  </div>
+
+  {{!-- Przedmioty --}}
+  <div class="sidebarButtons_kategoria">{{localize "sidebarButtons.Przedmioty"}}</div>
+
+  <div class="sidebarButtons_linia">
+    <span><i class="fas fa-eye"></i> {{localize "sidebarButtons.GrafikaTy"}}</span>
+    <input type="checkbox" name="grafikaTy.przedmioty.gm" {{#if ustawienia.grafikaTy.przedmioty.gm}}checked{{/if}} />
+    <input type="checkbox" name="grafikaTy.przedmioty.gracze" {{#if ustawienia.grafikaTy.przedmioty.gracze}}checked{{/if}} />
+  </div>
+
+  <div class="sidebarButtons_linia">
+    <span><i class="fas fa-share-alt"></i> {{localize "sidebarButtons.GrafikaWszyscy"}}</span>
+    <input type="checkbox" name="grafikaWszyscy.przedmioty.gm" {{#if ustawienia.grafikaWszyscy.przedmioty.gm}}checked{{/if}} />
+    <input type="checkbox" name="grafikaWszyscy.przedmioty.gracze" {{#if ustawienia.grafikaWszyscy.przedmioty.gracze}}checked{{/if}} />
+  </div>
+
+  <div class="sidebarButtons_linia">
+    <span><i class="fas fa-lock"></i> {{localize "sidebarButtons.Uprawniania"}}</span>
+    <input type="checkbox" name="uprawnienia.przedmioty.gm" {{#if ustawienia.uprawnienia.przedmioty.gm}}checked{{/if}} />
+    <span></span>
+  </div>
+
+  {{!-- Dzienniki --}}
+  <div class="sidebarButtons_kategoria">{{localize "sidebarButtons.Dzienniki"}}</div>
+
+  <div class="sidebarButtons_linia">
+    <span><i class="fas fa-lock"></i> {{localize "sidebarButtons.Uprawniania"}}</span>
+    <input type="checkbox" name="uprawnienia.dzienniki.gm" {{#if ustawienia.uprawnienia.dzienniki.gm}}checked{{/if}} />
+    <span></span>
+  </div>
+
+  {{!-- Tablice --}}
+  <div class="sidebarButtons_kategoria">{{localize "sidebarButtons.Tablice"}}</div>
+
+  <div class="sidebarButtons_linia">
+    <span><i class="fas fa-dice-d20"></i> {{localize "sidebarButtons.rzuc"}}</span>
+    <input type="checkbox" name="rzuc.tablice.gm" {{#if ustawienia.rzuc.tablice.gm}}checked{{/if}} />
+    <input type="checkbox" name="rzuc.tablice.gracze" {{#if ustawienia.rzuc.tablice.gracze}}checked{{/if}} />
+  </div>
+
+  {{!-- Makra --}}
+
+  <div class="sidebarButtons_kategoria">{{localize "sidebarButtons.Makra"}}</div>
+
+  <div class="sidebarButtons_linia">
+    <span><i class="fas fa-play"></i> {{localize "sidebarButtons.UzyjMakra"}}</span>
+    <input type="checkbox" name="uzyjMakra.makra.gm" {{#if ustawienia.uzyjMakra.makra.gm}}checked{{/if}} />
+    <input type="checkbox" name="uzyjMakra.makra.gracze" {{#if ustawienia.uzyjMakra.makra.gracze}}checked{{/if}} />
+  </div>
+
+  <hr>
+
+  <div class="hint">{{localize "sidebarButtons.GraczeMuszaOdswiezyc"}}</div>
+
+  <hr>
+
+  <button type="button" class="sidebarButtons_przyciskZamknij">
+      {{localize "sidebarButtons.Zamknij"}}
+  </button>
+
+</form>
