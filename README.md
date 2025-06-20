@@ -34,4 +34,4 @@ Icons used from [Font Awesome](https://fontawesome.com/) and the Foundry UI.
 ## 💬 Feedback
 
 Found a bug or have a suggestion? Join my Discord channel:  
-🔗 https://discord.gg/gb4UHaAsc4
+🔗 https://discord.gg/9p9jsVmv

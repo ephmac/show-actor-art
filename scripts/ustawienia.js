@@ -1,3 +1,5 @@
+import { otworzDialogWsparcia } from "./dialog_wsparcie.js";
+
 export function rejestrujUstawienia() {
   
   game.settings.register("show-actor-art", "przyciski", {
@@ -68,6 +70,10 @@ export class ButtonSettingsForm extends FormApplication {
 
   html.find(".sidebarButtons_przyciskZamknij").on("click", () => {
     this.close();
+  });
+
+  html.find(".sidebarButtons_przyciskWsparcie").on("click", () => {
+    otworzDialogWsparcia();
   });
 }
 

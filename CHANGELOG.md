@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.0.1] - 2025-05-24
+### Added
+- "Support me" button and dialog
+
 ## [2.0.0] - 2025-05-24
 ### Added
 - New Buttons: Added support for Roll Tables and Macros in the sidebar directory.
