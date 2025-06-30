@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.1.0] - 2025-05-24
+### Changed
+- Small wrapper fix – buttons no longer waste space.
+
 ## [2.0.1] - 2025-05-24
 ### Added
 - "Support me" button and dialog

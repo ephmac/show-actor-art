@@ -42,8 +42,15 @@ function shouldDisplay(ustawienie) {
 function dodajJesliIstnieje(element, ustawienie, funkcjaPrzycisku) {
   if (ustawienie !== true && !shouldDisplay(ustawienie)) return;
 
+  let wrapper = element.querySelector(".sidebarButtons_wrapper");
+  if (!wrapper) {
+    wrapper = document.createElement("div");
+    wrapper.classList.add("sidebarButtons_wrapper");
+    element.appendChild(wrapper);
+  }
+
   const przycisk = funkcjaPrzycisku(element);
   if (przycisk instanceof HTMLElement) {
-    element.appendChild(przycisk);
+    wrapper.appendChild(przycisk);
   }
 }

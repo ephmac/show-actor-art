@@ -9,7 +9,7 @@ export function otworzDialogWsparcia() {
             Tytul: "Wesprzyj Twórcę",
             Powitanie: "Dzięki, że korzystasz z mojego modułu! ❤️",
             Tresc: "Jeśli chcesz pomóc w jego rozwoju, możesz:",
-            Patreon: "Wesprzeć mnie na Patronite",
+            Patreon: "Wesprzeć mnie na Patreonie",
             Kofi: "Postawić mi kawę na Ko-fi",
             Discord: "Dołączyć do Discorda",
             Footer: "Każda forma wsparcia daje mi więcej czasu na rozwój i aktualizacje!",

@@ -82,18 +82,10 @@
   background-color: #ddd;
   color: inherit;
 }
-.directory-item.document {
+.sidebarButtons_wrapper {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.directory-item.document .document-name {
-  flex: 1 1 auto;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.directory-item.document .sidebarButtons_przycisk {
+  margin-left: auto;
+  gap: 2px;
   flex-shrink: 0;
+  max-width: max-content;
 }
-
